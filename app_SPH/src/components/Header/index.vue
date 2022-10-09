@@ -5,16 +5,21 @@
             <div class="container">
                 <div class="loginList">
                     <p>尚品汇欢迎您！</p>
-                    <p>
+                    <p v-if="!$store.state.user.nickName">
                         <span>请</span>
                         <!-- 声明式导航：务必要有to属性 -->
                         <router-link to="/login">登录</router-link>
                         <router-link class="register" to="/register">免费注册</router-link>
                     </p>
+                    <!-- 如果登录显示的是用户名字与退出登录 -->
+                    <p v-else>
+                        <a>{{$store.state.user.nickName}}</a>
+                        <a class="register" @click="logout">退出登录</a>
+                    </p>
                 </div>
                 <div class="typeList">
-                    <a href="###">我的订单</a>
-                    <a href="###">我的购物车</a>
+                    <router-link to="/center">我的订单</router-link>
+                    <router-link to="/shopcart">我的购物车</router-link>
                     <a href="###">我的尚品汇</a>
                     <a href="###">尚品汇会员</a>
                     <a href="###">企业采购</a>
@@ -43,6 +48,8 @@
 
 <script>
 export default {
+    //给组件起一个名字,开发者工具中显示这个组件的时候，显示的就是这个名字
+    name: "Header",
     data() {
         return {
             keyword:''
@@ -79,8 +86,27 @@ export default {
                 location.query = this.$route.query;
             }
             this.$router.push(location);
+        },
+         //退出登录的按钮的回调
+        logout(){
+            //派遣action退出登录
+            this.$store.dispatch('logout');
         }
     },
+    mounted() {
+    //清除关键字
+    this.$bus.$on("clearKeyword", () => {
+        console.log(123);
+        this.keyword = "";
+        });
+    },
+    computed:{
+        // 用户名信息
+        username(){
+            console.log(this.$store.state);
+            return this.$store.state.user.nickName
+        }
+    }
 }
 </script>
 

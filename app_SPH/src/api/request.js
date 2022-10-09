@@ -1,5 +1,7 @@
 //对于axios进行二次封装
 import axios from "axios";
+//获取仓库:存储数据
+import store from "@/store";
 //引入进度条
 import nprogress from 'nprogress';
 //引入相关进度条的样式
@@ -21,15 +23,15 @@ requests.interceptors.request.use(config => {
     //进度条开始
     nprogress.start();
 
-    // if (store.state.shopcart.USER_ID) {
-    //     config.headers.userTempId = store.state.shopcart.USER_ID;
-    // }
+    if (store.state.shopcart.USER_ID) {
+        config.headers.userTempId = store.state.shopcart.USER_ID;
+    }
 
     //token[公共参数]
 
-    // if(store.state.user.token){
-    //     config.headers.token = store.state.user.token;
-    // }
+    if(store.state.user.token){
+        config.headers.token = store.state.user.token;
+    }
 
     //每一次发请求,请求头携带用户临时身份
     // config.headers.userTempId = SET_USERID();

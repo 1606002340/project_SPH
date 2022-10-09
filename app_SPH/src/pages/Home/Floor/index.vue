@@ -25,14 +25,14 @@
             <div class="floorBanner">
               <div class="swiper-container" ref="floor1Swiper">
                 <div class="swiper-wrapper">
-                  <!-- <div
+                  <div
                     class="swiper-slide"
                     v-for="(item, index) in floor.carouselList"
                     :key="item.id"
                     ref="box"
                   >
                     <img :src="item.imgUrl" />
-                  </div> -->
+                  </div>
                   <div
                     class="swiper-slide"
                     v-for="item in floor.carouselList"
@@ -79,8 +79,8 @@
 </template>
 
 <script>
-// import Swiper from "swiper";
-// import "swiper/css/swiper.min.css";
+import Swiper from "swiper";
+import 'swiper/css/swiper.css'
 export default {
   name: "",
   props: ["floor"],

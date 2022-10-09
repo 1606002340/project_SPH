@@ -6,11 +6,11 @@ Vue.use(Vuex);
 
 //引入小仓库
 import home from './home';
-// import search from './search';
-// import detail from './detail';
-// import user from './user';
-// import  shopcart from './shopcart'
-// import trade from './trade';
+import search from './search';
+import detail from './detail';
+import user from './user';
+import shopcart from './shopcart'
+import trade from './trade';
 
 
 //对外暴露仓库
@@ -21,10 +21,10 @@ export default new Vuex.Store({
     //vuex新增的一个配置项:模块式开发.右侧V也是对象
     modules: {
         home,
-        // search,
-        // detail,
-        // user,
-        // shopcart,
-        // trade
+        search,
+        detail,
+        user,
+        shopcart,
+        trade
     }
 })
