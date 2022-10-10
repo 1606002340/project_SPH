@@ -96,7 +96,7 @@ export default {
     mounted() {
     //清除关键字
     this.$bus.$on("clearKeyword", () => {
-        console.log(123);
+        // console.log(123);
         this.keyword = "";
         });
     },

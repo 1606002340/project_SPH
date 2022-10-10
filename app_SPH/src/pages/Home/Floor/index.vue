@@ -25,20 +25,10 @@
             <div class="floorBanner">
               <div class="swiper-container" ref="floor1Swiper">
                 <div class="swiper-wrapper">
-                  <div
-                    class="swiper-slide"
+                  <div class="swiper-slide"
                     v-for="(item, index) in floor.carouselList"
                     :key="item.id"
-                    ref="box"
-                  >
-                    <img :src="item.imgUrl" />
-                  </div>
-                  <div
-                    class="swiper-slide"
-                    v-for="item in floor.carouselList"
-                    :key="item.id"
-                    ref="box"
-                  >
+                    ref="box">
                     <img :src="item.imgUrl" />
                   </div>
                 </div>

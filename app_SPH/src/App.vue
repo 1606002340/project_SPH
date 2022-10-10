@@ -21,6 +21,7 @@ export default {
   mounted() {
     //App的根组件挂载完毕,发一次请求即可.
     this.$store.dispatch('categoryList');
+    
   }
 }
 </script>

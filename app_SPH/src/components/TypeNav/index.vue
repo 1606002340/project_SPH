@@ -8,7 +8,8 @@
                                 <!-- 三级联动 -->
                 <div class="sort"  @mouseleave="leaveHandler" v-show="show">
                     <div class="all-sort-list2" @click="goSearch">
-                        <div class="item" v-for="(c1,index) in categoryList" :key="c1.categoryId" :class="{cur:currentIndex==index}">
+                        <div class="item" v-for="(c1,index) in categoryList" 
+                        :key="c1.categoryId" :class="{cur:currentIndex==index}">
                             <h3 @mouseenter="changeIndex(index)">
                                 <a 
                                 :data-categoryName="c1.categoryName" 

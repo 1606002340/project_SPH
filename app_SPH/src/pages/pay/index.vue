@@ -149,7 +149,7 @@ export default {
               clearInterval(this.timer);
               //关闭盒子
               done();
-              this.$message.error('支付遇见问题请联系超管豪哥');
+              this.$message.error('那多不好意思，请联系WCY直接转账');
             }
         }
       });

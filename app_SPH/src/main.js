@@ -33,13 +33,18 @@ Vue.prototype.$msgbox = MessageBox;
 Vue.prototype.$alert = MessageBox.alert;
 Vue.prototype.$message = Message;
 
+// 图片懒加载
+import  atm  from "@/assets/1.jpg";
+import VueLazyload from 'vue-lazyload'
+Vue.use(VueLazyload,{
+  loading: atm
+})
 
-// import VueLazyload from 'vue-lazyload'
+
 
 //将项目全部请求函数引入进来[分别暴露]
 // 统一引入
 import  * as http from '@/api';
-console.log(http);
 new Vue({
   //配置全局事件总线
   beforeCreate() {
