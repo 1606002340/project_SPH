@@ -6,6 +6,8 @@
       @click.native  可以将自定义事件变为原生DOM 事件
       当前原生的DOMclick事件，其实是给子组件的根节点绑定了点击事件---利用到事件的委派
     -->
+
+    <!-- 给原生的DOM 绑定自定义事件是没有意义的，以为没有办法触发$emit函数 -->
     <Event1 @click.native="handler1"></Event1>
     <hr />
     <pre @memeda="handler2">
